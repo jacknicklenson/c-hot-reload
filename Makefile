@@ -5,6 +5,7 @@ BINS=sharedlib.so main.out
 all: $(BINS)
 
 %.so: %.c
+	mkdir -p sharedlib
 	$(CC) $(CFLAGS) -shared -fPIC -o sharedlib/$@ $^
 
 %.out: %.c
