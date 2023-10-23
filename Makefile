@@ -1,5 +1,5 @@
 CC=clang
-CFLAGS=-Wall -Wextra -Wpedantic -pedantic-errors
+CFLAGS=-Wall -Wextra -Wpedantic -Werror -pedantic -pedantic-errors
 BINS=sharedlib.so main.out
 
 all: $(BINS)
@@ -14,3 +14,5 @@ all: $(BINS)
 clean:
 	rm -f sharedlib/sharedlib.so main.out
 	rm -rf *.dSYM
+
+.PHONY: clean all
